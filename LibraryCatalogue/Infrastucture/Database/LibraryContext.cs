@@ -4,13 +4,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LibraryCatalogue.Infrastucture.Database;
 
-public class PrintContext : DbContext
+public class LibraryContext : DbContext
 {
     public required DbSet<Print> Prints { get; set; }
-
+    public required DbSet<Magazine> Magazines { get; set; }
+    public required DbSet<Book> Books { get; set; }
     public required DbSet<Author> Authors { get; set; }
 
-    public PrintContext(DbContextOptions<PrintContext> options) : base(options)
+    public LibraryContext(DbContextOptions<LibraryContext> options) : base(options)
     {
     }
     

@@ -8,6 +8,10 @@ public class PrintEntityTypeConfiguration : IEntityTypeConfiguration<Print>
 {
     public void Configure(EntityTypeBuilder<Print> builder)
     {
+        builder.HasKey(p => p.Id);
+        
+        builder.HasBaseType<Print>();
+        
         builder.HasDiscriminator<string>("Type")
             .HasValue<Book>("Book")
             .HasValue<Magazine>("Magazine");

@@ -10,18 +10,19 @@ public record CreateBookCommand(string Title, Author Author, string Description,
 {
     private sealed class Handler : IRequestHandler<CreateBookCommand, Guid>
     {
-        private readonly PrintContext _printContext;
+        private readonly LibraryContext _libraryContext;
 
-        public Handler(PrintContext printContext)
+        public Handler(LibraryContext libraryContext)
         {
-            _printContext = printContext;
+            _libraryContext = libraryContext;
         }
         
         public async Task<Guid> Handle(CreateBookCommand request, CancellationToken cancellationToken)
         {
             var book = Book.Create(request.Title, request.Author, request.Description, request.Genre);
 
-            await _printContext.AddAsync(book, cancellationToken);
+            await _libraryContext.Prints.AddAsync(book, cancellationToken);
+            await _libraryContext.SaveChangesAsync(cancellationToken);
 
             return book.Id;
         }
