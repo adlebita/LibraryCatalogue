@@ -1,17 +1,17 @@
-﻿using LibraryCatalogue.Domain.Models.Print;
+﻿using LibraryCatalogue.Domain.Models.Publication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace LibraryCatalogue.Infrastucture.Database;
 
-public class PrintEntityTypeConfiguration : IEntityTypeConfiguration<Print>
+public class PublicationEntityTypeConfiguration : IEntityTypeConfiguration<Publication>
 {
-    public void Configure(EntityTypeBuilder<Print> builder)
+    public void Configure(EntityTypeBuilder<Publication> builder)
     {
         builder.HasKey(p => p.Id);
-        
-        builder.HasBaseType<Print>();
-        
+
+        builder.HasBaseType<Publication>();
+
         builder.HasDiscriminator<string>("Type")
             .HasValue<Book>("Book")
             .HasValue<Magazine>("Magazine");

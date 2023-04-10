@@ -1,6 +1,6 @@
 using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Models.Author;
-using LibraryCatalogue.Domain.Models.Print;
+using LibraryCatalogue.Domain.Models.Publication;
 using LibraryCatalogue.Infrastucture.Database;
 using MediatR;
 
@@ -16,12 +16,15 @@ public record CreateBookCommand(string Title, Author Author, string Description,
         {
             _libraryContext = libraryContext;
         }
-        
+
         public async Task<Guid> Handle(CreateBookCommand request, CancellationToken cancellationToken)
         {
-            var book = Book.Create(request.Title, request.Author, request.Description, request.Genre);
+            var book = Book.Create(request.Title, request.Description, request.Genre);
+            book.AddAuthor(request.Author);
+            request.Author.AddPublication(book);
 
-            await _libraryContext.Prints.AddAsync(book, cancellationToken);
+            await _libraryContext.AddAsync(request.Author, cancellationToken);
+            await _libraryContext.AddAsync(book, cancellationToken);
             await _libraryContext.SaveChangesAsync(cancellationToken);
 
             return book.Id;

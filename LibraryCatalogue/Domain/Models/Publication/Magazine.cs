@@ -1,15 +1,18 @@
 ﻿using LibraryCatalogue.Domain.Enums;
 
-namespace LibraryCatalogue.Domain.Models.Print;
+namespace LibraryCatalogue.Domain.Models.Publication;
 
-public class Magazine : Print
+public class Magazine : Publication
 {
     public static Magazine Create(string title, Author.Author author, string description, Genre genre)
-        => new()
+    {
+        var magazine = new Magazine
         {
             Title = title,
             Description = description,
             Genre = genre,
-            Authors = new List<Author.Author> {author}
         };
+
+        return magazine;
+    }
 }

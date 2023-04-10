@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibraryCatalogue", "LibraryCatalogue\LibraryCatalogue.csproj", "{572ACB84-89F1-4BEF-9C9D-25F40168E5DC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{572ACB84-89F1-4BEF-9C9D-25F40168E5DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572ACB84-89F1-4BEF-9C9D-25F40168E5DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572ACB84-89F1-4BEF-9C9D-25F40168E5DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572ACB84-89F1-4BEF-9C9D-25F40168E5DC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

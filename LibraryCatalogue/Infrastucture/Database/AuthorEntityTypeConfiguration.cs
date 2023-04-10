@@ -1,4 +1,5 @@
 ﻿using LibraryCatalogue.Domain.Models.Author;
+using LibraryCatalogue.Domain.Models.Publication;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -9,5 +10,9 @@ public class AuthorEntityTypeConfiguration : IEntityTypeConfiguration<Author>
     public void Configure(EntityTypeBuilder<Author> builder)
     {
         builder.HasKey(p => p.Id);
+
+        builder.HasMany<Publication>()
+            .WithMany(p => p.Authors)
+            .UsingEntity<string>("AuthorPublication");
     }
 }

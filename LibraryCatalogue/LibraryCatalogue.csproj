@@ -8,10 +8,6 @@
 
     <ItemGroup>
       <Folder Include="Application\Commands" />
-      <Folder Include="Application\Dtos\Responses\Models" />
-      <Folder Include="Application\Features" />
-      <Folder Include="Application\Queries" />
-      <Folder Include="Application\Requests" />
     </ItemGroup>
 
     <ItemGroup>
