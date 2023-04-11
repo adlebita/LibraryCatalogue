@@ -15,4 +15,14 @@ public class Book : Publication
 
         return book;
     }
+
+    public void Update(string title, Author.Author author, string description, Genre genre)
+    {
+        Title = title;
+        Description = description;
+        Genre = genre;
+        
+        Authors.Clear();
+        Authors.Add(author);
+    }
 }

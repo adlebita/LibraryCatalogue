@@ -1,3 +1,4 @@
+using LibraryCatalogue.Application.Commands.Books;
 using LibraryCatalogue.Application.Dtos.Requests;
 using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.Queries;
@@ -35,7 +36,18 @@ app.MapGet("/books/{id:guid}", async (ISender sender, Guid id) =>
     return Results.Ok(bookDto);
 });
 
-app.MapDelete("/books/{id:guid}", (Guid id) => { });
-app.MapPut("/books/{id:guid}", (Guid id) => { });
+app.MapDelete("/books/{id:guid}", async (ISender sender, Guid id) =>
+{
+    await sender.Send(new DeleteBookCommand(id));
+    return Results.NoContent();
+});
+
+app.MapPut("/books/{id:guid}", async (ISender sender, Guid id, UpdateBookRequestDto updateBookRequestDto) =>
+{
+    var bookMapper = new BookMappings();
+    var updateBookCommand = bookMapper.UpdateBookRequestToCommand(updateBookRequestDto) with { Id = id };
+    await sender.Send(updateBookCommand);
+    return Results.NoContent();
+});
 
 app.Run();

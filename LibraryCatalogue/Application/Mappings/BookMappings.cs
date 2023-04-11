@@ -11,4 +11,6 @@ public partial class BookMappings
 {
     public partial CreateBookCommand CreateBookRequestToCommand(CreateBookRequestDto createBookRequestDto);
     public partial BookDto CreateBookToBookDto(Book book);
+
+    public partial UpdateBookCommand UpdateBookRequestToCommand(UpdateBookRequestDto updateBookRequestDto);
 }
