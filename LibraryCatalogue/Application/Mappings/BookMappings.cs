@@ -7,7 +7,7 @@ using Riok.Mapperly.Abstractions;
 namespace LibraryCatalogue.Application.Mappings;
 
 [Mapper]
-public partial class BookMappings
+public partial class BookMappings : IMapperly
 {
     public partial CreateBookCommand CreateBookRequestToCommand(CreateBookRequestDto createBookRequestDto);
     public partial BookDto CreateBookToBookDto(Book book);

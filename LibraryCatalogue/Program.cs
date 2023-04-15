@@ -4,9 +4,16 @@ using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.Queries;
 using LibraryCatalogue.Infrastucture.Database;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.Scan(scan => scan
+    .FromAssemblyOf<Program>()
+    .AddClasses(classes => classes.AssignableTo<IMapperly>())
+    .AsSelf()
+    .WithTransientLifetime());
 
 builder.Services.AddMediatR(configuration =>
 {
@@ -17,21 +24,19 @@ builder.Services.AddDbContext<LibraryContext>(options => options.UseInMemoryData
 
 var app = builder.Build();
 
-app.MapPost("/books", async (ISender sender, CreateBookRequestDto createBookRequestDto) =>
+app.MapPost("/books", async (ISender sender, BookMappings bookMapper, CreateBookRequestDto createBookRequestDto) =>
 {
-    var bookMapper = new BookMappings();
     var createBookCommand = bookMapper.CreateBookRequestToCommand(createBookRequestDto);
 
     var bookId = await sender.Send(createBookCommand);
     return bookId;
 });
 
-app.MapGet("/books/{id:guid}", async (ISender sender, Guid id) =>
+app.MapGet("/books/{id:guid}", async (ISender sender, BookMappings bookMapper, Guid id) =>
 {
     var book = await sender.Send(new GetBookByIdAsNoTracking(id));
     if (book == null) return Results.NotFound();
 
-    var bookMapper = new BookMappings();
     var bookDto = bookMapper.CreateBookToBookDto(book);
     return Results.Ok(bookDto);
 });
@@ -42,9 +47,8 @@ app.MapDelete("/books/{id:guid}", async (ISender sender, Guid id) =>
     return Results.NoContent();
 });
 
-app.MapPut("/books/{id:guid}", async (ISender sender, Guid id, UpdateBookRequestDto updateBookRequestDto) =>
+app.MapPut("/books/{id:guid}", async (ISender sender, BookMappings bookMapper, Guid id, UpdateBookRequestDto updateBookRequestDto) =>
 {
-    var bookMapper = new BookMappings();
     var updateBookCommand = bookMapper.UpdateBookRequestToCommand(updateBookRequestDto) with { Id = id };
     await sender.Send(updateBookCommand);
     return Results.NoContent();

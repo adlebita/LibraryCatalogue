@@ -7,8 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6677691e-964a-457c-b3a9-db5123c9c108" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/IMapperly.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryCatalogue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryCatalogue/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryCatalogue/LibraryCatalogue.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/LibraryCatalogue.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +19,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/EE588A2369C98F7E086C1C59/Riok.Mapperly/Riok.Mapperly.MapperGenerator/BookMappings.g.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/60debf49b360437922e95c17bc1d3415194f0213322445b216c48342572fe7/IImplementationTypeSelector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6627dc668649fcf591c5d8f92782510f3cbfd8d8cbbbf6162656612ef5701c/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/CreateBookCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" root0="FORCE_HIGHLIGHTING" />
@@ -84,7 +86,8 @@
       <workItem from="1681125931472" duration="350000" />
       <workItem from="1681177177318" duration="5850000" />
       <workItem from="1681250664706" duration="1104000" />
-      <workItem from="1681535061717" duration="3555000" />
+      <workItem from="1681535061717" duration="4484000" />
+      <workItem from="1681555012791" duration="1689000" />
     </task>
     <task id="LOCAL-00001" summary="Ide workspace">
       <created>1681125960988</created>
@@ -100,7 +103,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681181238877</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Refactor folders.">
+      <created>1681545627265</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681545627265</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -112,9 +122,27 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Ide workspace" />
     <MESSAGE value="DELETE &amp; PUT Endpoints for book, command, mappings" />
-    <option name="LAST_COMMIT_MESSAGE" value="DELETE &amp; PUT Endpoints for book, command, mappings" />
+    <MESSAGE value="Refactor folders." />
+    <option name="LAST_COMMIT_MESSAGE" value="Refactor folders." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/LibraryCatalogue/Application/Queries/GetBookByIdAsNoTracking.cs</url>
+          <line>19</line>
+          <properties documentPath="C:\Users\LebitaA\RiderProjects\LibraryCatalogue\LibraryCatalogue\Application\Queries\GetBookByIdAsNoTracking.cs" initialLine="19" containingFunctionPresentation="method 'Handle'">
+            <startOffsets>
+              <option value="660" />
+            </startOffsets>
+            <endOffsets>
+              <option value="661" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#LibraryCatalogue.Infrastucture.Database.LibraryContext" memberName="Books" />
