@@ -1,6 +1,7 @@
 ﻿using LibraryCatalogue.Domain.Interfaces;
+using LibraryCatalogue.Domain.Models.Publications;
 
-namespace LibraryCatalogue.Domain.Models.Author;
+namespace LibraryCatalogue.Domain.Models.Authors;
 
 public class Author : IEntity
 {
@@ -9,7 +10,7 @@ public class Author : IEntity
     public required string LastName { get; set; }
     public string? MiddleName { get; set; }
     public required DateOnly BirthDate { get; set; }
-    public ICollection<Publication.Publication> Publications { get; set; } = new List<Publication.Publication>();
+    public ICollection<Publication> Publications { get; set; } = new List<Publication>();
 
     public static Author Create(string firstName, string lastName, string? middleName, DateOnly birthdate)
     {
@@ -22,7 +23,7 @@ public class Author : IEntity
         };
     }
 
-    public void AddPublication(Publication.Publication publication)
+    public void AddPublication(Publication publication)
     {
         Publications.Add(publication);
     }

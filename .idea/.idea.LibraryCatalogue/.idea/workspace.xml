@@ -7,13 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6677691e-964a-457c-b3a9-db5123c9c108" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/DeleteBookCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/UpdateBookCommand.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Dtos/Requests/UpdateBookRequestDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.LibraryCatalogue/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.LibraryCatalogue/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Application/Dtos/Responses/Models/BookDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Dtos/Responses/Models/BookDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Domain/Models/Publication/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Domain/Models/Publication/Book.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryCatalogue/LibraryCatalogue.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/LibraryCatalogue.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/LibraryCatalogue/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/LibraryCatalogue/Program.cs" afterDir="false" />
     </list>
@@ -23,13 +17,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Temp/SourceGeneratedDocuments/EE588A2369C98F7E086C1C59/Riok.Mapperly/Riok.Mapperly.MapperGenerator/BookMappings.g.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/6627dc668649fcf591c5d8f92782510f3cbfd8d8cbbbf6162656612ef5701c/ServiceCollectionExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/CreateBookCommand.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/LebitaA/RiderProjects/LibraryCatalogue/LibraryCatalogue/Application/Dtos/Responses/Models/BookDto.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryCatalogue/Application/Mappings/BookMappings.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/LibraryCatalogue/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -50,6 +40,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -91,7 +82,9 @@
       <option name="presentableId" value="Default" />
       <updated>1681125928375</updated>
       <workItem from="1681125931472" duration="350000" />
-      <workItem from="1681177177318" duration="3460000" />
+      <workItem from="1681177177318" duration="5850000" />
+      <workItem from="1681250664706" duration="1104000" />
+      <workItem from="1681535061717" duration="3555000" />
     </task>
     <task id="LOCAL-00001" summary="Ide workspace">
       <created>1681125960988</created>
@@ -100,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681125960988</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="DELETE &amp; PUT Endpoints for book, command, mappings">
+      <created>1681181238877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681181238877</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -111,65 +111,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Ide workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ide workspace" />
+    <MESSAGE value="DELETE &amp; PUT Endpoints for book, command, mappings" />
+    <option name="LAST_COMMIT_MESSAGE" value="DELETE &amp; PUT Endpoints for book, command, mappings" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/UpdateBookCommand.cs</url>
-          <line>22</line>
-          <properties documentPath="C:\Users\LebitaA\RiderProjects\LibraryCatalogue\LibraryCatalogue\Application\Commands\Books\UpdateBookCommand.cs" initialLine="22" containingFunctionPresentation="method 'Handle'">
-            <startOffsets>
-              <option value="874" />
-            </startOffsets>
-            <endOffsets>
-              <option value="891" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/UpdateBookCommand.cs</url>
-          <line>28</line>
-          <properties documentPath="C:\Users\LebitaA\RiderProjects\LibraryCatalogue\LibraryCatalogue\Application\Commands\Books\UpdateBookCommand.cs" initialLine="28" containingFunctionPresentation="method 'Handle'">
-            <startOffsets>
-              <option value="1102" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1160" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LibraryCatalogue/Application/Commands/Books/UpdateBookCommand.cs</url>
-          <line>29</line>
-          <properties documentPath="C:\Users\LebitaA\RiderProjects\LibraryCatalogue\LibraryCatalogue\Application\Commands\Books\UpdateBookCommand.cs" initialLine="29" containingFunctionPresentation="method 'Handle'">
-            <startOffsets>
-              <option value="1169" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1170" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/LibraryCatalogue/Program.cs</url>
-          <line>45</line>
-          <properties documentPath="C:\Users\LebitaA\RiderProjects\LibraryCatalogue\LibraryCatalogue\Program.cs" initialLine="45" containingFunctionPresentation="">
-            <startOffsets>
-              <option value="1497" />
-            </startOffsets>
-            <endOffsets>
-              <option value="1498" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="Type#LibraryCatalogue.Infrastucture.Database.LibraryContext" memberName="Books" />

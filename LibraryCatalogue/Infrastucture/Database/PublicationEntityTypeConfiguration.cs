@@ -1,4 +1,4 @@
-﻿using LibraryCatalogue.Domain.Models.Publication;
+﻿using LibraryCatalogue.Domain.Models.Publications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

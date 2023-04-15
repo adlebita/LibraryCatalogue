@@ -1,7 +1,8 @@
 ﻿using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Interfaces;
+using LibraryCatalogue.Domain.Models.Authors;
 
-namespace LibraryCatalogue.Domain.Models.Publication;
+namespace LibraryCatalogue.Domain.Models.Publications;
 
 public abstract class Publication : IEntity
 {
@@ -10,9 +11,9 @@ public abstract class Publication : IEntity
     public required string Description { get; set; }
     public required Genre Genre { get; set; }
 
-    public ICollection<Author.Author> Authors { get; set; } = new List<Author.Author>();
+    public ICollection<Author> Authors { get; set; } = new List<Author>();
 
-    public void AddAuthor(Author.Author author)
+    public void AddAuthor(Author author)
     {
         Authors.Add(author);
     }

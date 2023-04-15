@@ -1,6 +1,7 @@
 ﻿using LibraryCatalogue.Domain.Enums;
+using LibraryCatalogue.Domain.Models.Authors;
 
-namespace LibraryCatalogue.Domain.Models.Publication;
+namespace LibraryCatalogue.Domain.Models.Publications;
 
 public class Book : Publication
 {
@@ -16,7 +17,7 @@ public class Book : Publication
         return book;
     }
 
-    public void Update(string title, Author.Author author, string description, Genre genre)
+    public void Update(string title, Author author, string description, Genre genre)
     {
         Title = title;
         Description = description;

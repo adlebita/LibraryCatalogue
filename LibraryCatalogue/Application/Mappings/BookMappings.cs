@@ -1,7 +1,7 @@
 ﻿using LibraryCatalogue.Application.Commands.Books;
 using LibraryCatalogue.Application.Dtos.Requests;
 using LibraryCatalogue.Application.Dtos.Responses.Models;
-using LibraryCatalogue.Domain.Models.Publication;
+using LibraryCatalogue.Domain.Models.Publications;
 using Riok.Mapperly.Abstractions;
 
 namespace LibraryCatalogue.Application.Mappings;

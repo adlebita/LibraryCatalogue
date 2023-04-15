@@ -1,6 +1,6 @@
 using LibraryCatalogue.Domain.Enums;
-using LibraryCatalogue.Domain.Models.Author;
-using LibraryCatalogue.Domain.Models.Publication;
+using LibraryCatalogue.Domain.Models.Authors;
+using LibraryCatalogue.Domain.Models.Publications;
 using LibraryCatalogue.Infrastucture.Database;
 using MediatR;
 
