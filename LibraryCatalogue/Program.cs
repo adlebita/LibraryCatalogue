@@ -2,12 +2,14 @@ using LibraryCatalogue.Application.Commands.Books;
 using LibraryCatalogue.Application.Dtos.Requests;
 using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.Queries;
+using LibraryCatalogue.Domain.Models.Publications;
 using LibraryCatalogue.Infrastucture.Database;
 using MediatR;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Logging.ClearProviders().AddConsole(); 
 
 builder.Services.Scan(scan => scan
     .FromAssemblyOf<Program>()
@@ -18,11 +20,14 @@ builder.Services.Scan(scan => scan
 builder.Services.AddMediatR(configuration =>
 {
     configuration.RegisterServicesFromAssemblyContaining(typeof(Program));
+    configuration.AddBehavior<IPipelineBehavior<GetBookByIdAsNoTracking, Book?>, GetBookBehaviour>();
 });
 
 builder.Services.AddDbContext<LibraryContext>(options => options.UseInMemoryDatabase(nameof(LibraryContext)));
 
 var app = builder.Build();
+
+app.UseHttpLogging();
 
 app.MapPost("/books", async (ISender sender, BookMappings bookMapper, CreateBookRequestDto createBookRequestDto) =>
 {
@@ -55,3 +60,19 @@ app.MapPut("/books/{id:guid}", async (ISender sender, BookMappings bookMapper, G
 });
 
 app.Run();
+
+public class GetBookBehaviour : IPipelineBehavior<GetBookByIdAsNoTracking, Book?>
+{
+    private readonly ILogger<GetBookBehaviour> _logger;
+
+    public GetBookBehaviour(ILogger<GetBookBehaviour> logger) => _logger = logger;
+
+    public async Task<Book?> Handle(GetBookByIdAsNoTracking request, RequestHandlerDelegate<Book?> next, CancellationToken cancellationToken)
+    {
+        _logger.LogInformation($"Handling {nameof(GetBookByIdAsNoTracking)}");
+        var response = await next();
+        
+        _logger.LogInformation($"Handled {nameof(GetBookByIdAsNoTracking)}");
+        return response;
+    }
+}
