@@ -1,4 +1,4 @@
-﻿using LibraryCatalogue.Infrastucture.Database;
+﻿using LibraryCatalogue.Infrastructure.Database;
 using MediatR;
 
 namespace LibraryCatalogue.Application.Commands.Books;

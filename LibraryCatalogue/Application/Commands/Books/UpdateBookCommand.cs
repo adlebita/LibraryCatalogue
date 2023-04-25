@@ -1,6 +1,6 @@
 ﻿using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Models.Authors;
-using LibraryCatalogue.Infrastucture.Database;
+using LibraryCatalogue.Infrastructure.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

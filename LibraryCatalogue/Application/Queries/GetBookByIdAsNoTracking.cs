@@ -1,5 +1,5 @@
 ﻿using LibraryCatalogue.Domain.Models.Publications;
-using LibraryCatalogue.Infrastucture.Database;
+using LibraryCatalogue.Infrastructure.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 

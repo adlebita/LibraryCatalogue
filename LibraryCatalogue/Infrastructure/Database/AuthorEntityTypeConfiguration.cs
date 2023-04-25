@@ -3,7 +3,7 @@ using LibraryCatalogue.Domain.Models.Publications;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace LibraryCatalogue.Infrastucture.Database;
+namespace LibraryCatalogue.Infrastructure.Database;
 
 public class AuthorEntityTypeConfiguration : IEntityTypeConfiguration<Author>
 {

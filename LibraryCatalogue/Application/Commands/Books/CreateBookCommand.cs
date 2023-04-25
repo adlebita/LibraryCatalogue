@@ -1,7 +1,7 @@
 using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Models.Authors;
 using LibraryCatalogue.Domain.Models.Publications;
-using LibraryCatalogue.Infrastucture.Database;
+using LibraryCatalogue.Infrastructure.Database;
 using MediatR;
 
 namespace LibraryCatalogue.Application.Commands.Books;
