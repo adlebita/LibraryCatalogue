@@ -4,7 +4,7 @@ using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.Queries;
 using MediatR;
 
-namespace LibraryCatalogue;
+namespace LibraryCatalogue.Presentation;
 
 public static class LibraryEndpoints
 {
