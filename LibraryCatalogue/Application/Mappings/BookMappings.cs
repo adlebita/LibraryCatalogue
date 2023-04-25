@@ -10,7 +10,6 @@ namespace LibraryCatalogue.Application.Mappings;
 public partial class BookMappings : IMapperly
 {
     public partial CreateBookCommand CreateBookRequestToCommand(CreateBookRequestDto createBookRequestDto);
-    public partial BookDto CreateBookToBookDto(Book book);
-
+    public partial BookDto BookToBookDto(Book book);
     public partial UpdateBookCommand UpdateBookRequestToCommand(UpdateBookRequestDto updateBookRequestDto);
 }
