@@ -23,7 +23,7 @@ public static class LibraryEndpoints
             var book = await sender.Send(new GetBookByIdAsNoTracking(id));
             if (book == null) return Results.NotFound();
 
-            var bookDto = bookMapper.CreateBookToBookDto(book);
+            var bookDto = bookMapper.BookToBookDto(book);
             return Results.Ok(bookDto);
         });
 
