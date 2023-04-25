@@ -41,8 +41,3 @@ public static class LibraryEndpoints
         });
     }
 }
-
-class MyClass
-{
-    
-}
