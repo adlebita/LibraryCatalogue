@@ -1,3 +1,2 @@
 # LibraryCatalogue
-Dotnet 7 - Minimal API - CQRS - EntityCore Framework
-Mediatr
+Dotnet 7 - Minimal API - CQRS - EntityCore Framework - Mediatr
