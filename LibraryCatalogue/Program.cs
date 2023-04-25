@@ -1,7 +1,7 @@
-using LibraryCatalogue;
 using LibraryCatalogue.Application.Mappings;
+using LibraryCatalogue.Application.PipelineBehaviour;
 using LibraryCatalogue.Infrastructure.Database;
-using LibraryCatalogue.Infrastructure.Mediatr.PipelineBehaviour;
+using LibraryCatalogue.Presentation;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
