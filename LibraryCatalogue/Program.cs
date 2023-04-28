@@ -1,5 +1,7 @@
+using FluentValidation;
 using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.PipelineBehaviour;
+using LibraryCatalogue.Application.Queries;
 using LibraryCatalogue.Infrastructure.Database;
 using LibraryCatalogue.Presentation;
 using Microsoft.EntityFrameworkCore;
@@ -19,6 +21,8 @@ builder.Services.AddMediatR(configuration =>
     configuration.RegisterServicesFromAssemblyContaining(typeof(Program));
     configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
 });
+
+builder.Services.AddValidatorsFromAssemblyContaining<GetBookByIdAsNoTracking.Validator>(ServiceLifetime.Transient);
 
 builder.Services.AddDbContext<LibraryContext>(options => options.UseInMemoryDatabase(nameof(LibraryContext)));
 
