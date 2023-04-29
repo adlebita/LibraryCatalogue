@@ -7,6 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.0" />
+      <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.5.2" />
       <PackageReference Include="MediatR" Version="12.0.1" />
       <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.4" />
       <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="7.0.4" />
@@ -16,6 +18,10 @@
       </PackageReference>
       <PackageReference Include="Riok.Mapperly" Version="2.7.0" />
       <PackageReference Include="Scrutor" Version="4.2.2" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Infrastructure\Mediatr" />
     </ItemGroup>
 
 </Project>

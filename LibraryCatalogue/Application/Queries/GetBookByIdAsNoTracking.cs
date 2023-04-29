@@ -1,4 +1,5 @@
-﻿using LibraryCatalogue.Domain.Models.Publications;
+﻿using FluentValidation;
+using LibraryCatalogue.Domain.Models.Publications;
 using LibraryCatalogue.Infrastructure.Database;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -24,6 +25,15 @@ public sealed record GetBookByIdAsNoTracking(Guid Id) : IRequest<Book?>
                 .OfType<Book>()
                 .AsNoTracking()
                 .FirstOrDefaultAsync(b => b.Id == request.Id, cancellationToken);
+        }
+    }
+
+    public sealed class Validator : AbstractValidator<GetBookByIdAsNoTracking>
+    {
+        public Validator()
+        {
+            RuleFor(r => r.Id)
+                .NotEmpty();
         }
     }
 }
