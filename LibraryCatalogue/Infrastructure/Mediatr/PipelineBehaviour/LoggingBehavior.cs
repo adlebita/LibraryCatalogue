@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace LibraryCatalogue.Infrastructure.PipelineBehaviour;
+namespace LibraryCatalogue.Infrastructure.Mediatr.PipelineBehaviour;
 
 public record LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : notnull

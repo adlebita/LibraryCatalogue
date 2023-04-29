@@ -2,7 +2,8 @@ using FluentValidation;
 using LibraryCatalogue.Application.Mappings;
 using LibraryCatalogue.Application.Queries;
 using LibraryCatalogue.Infrastructure.Database;
-using LibraryCatalogue.Infrastructure.PipelineBehaviour;
+using LibraryCatalogue.Infrastructure.Mediatr.PipelineBehaviour;
+using LibraryCatalogue.Infrastructure.Middleware;
 using LibraryCatalogue.Presentation;
 using Microsoft.EntityFrameworkCore;
 
@@ -30,7 +31,7 @@ builder.Services.AddDbContext<LibraryContext>(options => options.UseInMemoryData
 var app = builder.Build();
 
 app.UseHttpLogging();
-
+app.UseMiddleware<ValidationExceptionMiddleware>();
 app.AddBooksEndpoints();
 
 app.Run();

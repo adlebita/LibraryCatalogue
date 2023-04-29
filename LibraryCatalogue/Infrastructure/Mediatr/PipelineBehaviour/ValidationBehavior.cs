@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace LibraryCatalogue.Infrastructure.PipelineBehaviour;
+namespace LibraryCatalogue.Infrastructure.Mediatr.PipelineBehaviour;
 
 public record ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
     where TRequest : notnull
@@ -14,7 +14,6 @@ public record ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
     {
         var validationResult = await _validator.ValidateAsync(request, ct);
 
-        //Todo: Return a nice response to the consumer.
         if (!validationResult.IsValid)
         {
             throw new ValidationException(validationResult.Errors);
