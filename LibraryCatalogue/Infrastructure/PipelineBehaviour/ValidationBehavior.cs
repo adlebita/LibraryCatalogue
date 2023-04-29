@@ -14,6 +14,12 @@ public record ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReque
     {
         var validationResult = await _validator.ValidateAsync(request, ct);
 
+        //Todo: Return a nice response to the consumer.
+        if (!validationResult.IsValid)
+        {
+            throw new ValidationException(validationResult.Errors);
+        }
+
         var response = await next();
         return response;
     }
