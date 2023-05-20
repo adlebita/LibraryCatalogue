@@ -1,3 +1,4 @@
+using FluentValidation;
 using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Models.Authors;
 using LibraryCatalogue.Domain.Models.Publications;
@@ -28,6 +29,15 @@ public record CreateBookCommand(string Title, Author Author, string Description,
             await _libraryContext.SaveChangesAsync(cancellationToken);
 
             return book.Id;
+        }
+    }
+
+    public sealed class CreateBookCommandValidator : AbstractValidator<CreateBookCommand>
+    {
+        public CreateBookCommandValidator()
+        {
+            RuleFor(r => r.Genre)
+                .IsInEnum();
         }
     }
 }

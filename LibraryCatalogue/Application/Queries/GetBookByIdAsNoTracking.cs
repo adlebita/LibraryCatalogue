@@ -28,9 +28,9 @@ public sealed record GetBookByIdAsNoTracking(Guid Id) : IRequest<Book?>
         }
     }
 
-    public sealed class Validator : AbstractValidator<GetBookByIdAsNoTracking>
+    public sealed class GetBookByIdAsNoTrackingValidator : AbstractValidator<GetBookByIdAsNoTracking>
     {
-        public Validator()
+        public GetBookByIdAsNoTrackingValidator()
         {
             RuleFor(r => r.Id)
                 .NotEmpty();

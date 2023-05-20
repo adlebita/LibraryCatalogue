@@ -24,4 +24,8 @@
       <Folder Include="Infrastructure\Mediatr" />
     </ItemGroup>
 
+    <ItemGroup>
+        <InternalsVisibleTo Include="LibraryCatalogue.Integration.Tests" />
+    </ItemGroup>
+
 </Project>
