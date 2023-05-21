@@ -21,7 +21,7 @@ public record CreateBookCommand(string Title, Author Author, string Description,
         public async Task<Guid> Handle(CreateBookCommand request, CancellationToken cancellationToken)
         {
             var book = Book.Create(request.Title, request.Description, request.Genre);
-            book.AddAuthor(request.Author);
+            book.AddAuthor(request.Author); //Todo: Fix the author relationship/method before implementing domain events.
             request.Author.AddPublication(book);
 
             await _libraryContext.AddAsync(request.Author, cancellationToken);
