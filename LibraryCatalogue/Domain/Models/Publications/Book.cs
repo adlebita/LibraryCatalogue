@@ -5,7 +5,7 @@ namespace LibraryCatalogue.Domain.Models.Publications;
 
 public class Book : Publication
 {
-    public static Book Create(string title, string description, Genre genre)
+    public static Book Create(string title, string description, Genre genre, Author author)
     {
         var book = new Book
         {
@@ -13,6 +13,7 @@ public class Book : Publication
             Description = description,
             Genre = genre
         };
+        book.AddAuthor(author);
 
         return book;
     }

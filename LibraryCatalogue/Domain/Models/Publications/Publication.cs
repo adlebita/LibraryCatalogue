@@ -13,7 +13,7 @@ public abstract class Publication : IEntity
 
     public ICollection<Author> Authors { get; set; } = new List<Author>();
 
-    public void AddAuthor(Author author)
+    protected void AddAuthor(Author author)
     {
         Authors.Add(author);
     }

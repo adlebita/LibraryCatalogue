@@ -1,8 +1,8 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
-using System.Text.Json;
 using LibraryCatalogue.Application.Dtos.Responses.Models;
 using LibraryCatalogue.Domain.Enums;
+using LibraryCatalogue.Domain.Models.Authors;
 using LibraryCatalogue.Domain.Models.Publications;
 using LibraryCatalogue.Infrastructure.Database;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -28,7 +28,8 @@ public class GetByIdOk : IAsyncLifetime
         _libraryContext = scopedServices.ServiceProvider.GetRequiredService<LibraryContext>();
         await _libraryContext.Database.EnsureCreatedAsync();
 
-        var book = Book.Create("Flowers for Algernon", "Ignorance is bliss.", Genre.Fiction);
+        var author = Author.Create("Martin", "Clarke", null, new DateOnly(1967, 01, 01));
+        var book = Book.Create("Flowers for Algernon", "Ignorance is bliss.", Genre.Fiction, author);
         await _libraryContext.Books.AddAsync(book);
         await _libraryContext.SaveChangesAsync();
         _libraryContext.ChangeTracker.Clear();
@@ -48,6 +49,7 @@ public class GetByIdOk : IAsyncLifetime
         Assert.Equal(HttpStatusCode.OK, _response.StatusCode);
         Assert.NotNull(_book);
         Assert.Equal("Flowers for Algernon", _book.Title);
+        Assert.Equal("Martin", _book.Authors.First().FirstName);
     }
 
     public async Task DisposeAsync()
