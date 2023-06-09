@@ -1,4 +1,5 @@
-﻿using LibraryCatalogue.Domain.Enums;
+﻿using LibraryCatalogue.Domain.DomainEvents;
+using LibraryCatalogue.Domain.Enums;
 using LibraryCatalogue.Domain.Models.Authors;
 
 namespace LibraryCatalogue.Domain.Models.Publications;
@@ -14,7 +15,7 @@ public class Book : Publication
             Genre = genre
         };
         book.AddAuthor(author);
-
+        book.RaiseDomainEvent(new BookCreatedEvent(book));
         return book;
     }
 

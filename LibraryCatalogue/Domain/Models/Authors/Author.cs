@@ -1,11 +1,10 @@
-﻿using LibraryCatalogue.Domain.Interfaces;
-using LibraryCatalogue.Domain.Models.Publications;
+﻿using LibraryCatalogue.Domain.Models.Publications;
+// ReSharper disable CollectionNeverQueried.Global
 
 namespace LibraryCatalogue.Domain.Models.Authors;
 
-public class Author : IEntity
+public class Author : Entity
 {
-    public Guid Id { get; set; }
     public required string FirstName { get; set; }
     public required string LastName { get; set; }
     public string? MiddleName { get; set; }
