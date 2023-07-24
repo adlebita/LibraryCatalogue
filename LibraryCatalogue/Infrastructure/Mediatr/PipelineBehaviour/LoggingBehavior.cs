@@ -11,10 +11,10 @@ public record LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest,
 
     public async Task<TResponse> Handle(TRequest request, RequestHandlerDelegate<TResponse> next, CancellationToken ct)
     {
-        _logger.LogInformation("Handling request: {RequestType} {@Request}", typeof(TRequest).FullName, request);
+        _logger.LogInformation("Handling request: {RequestType}", typeof(TRequest).FullName);
         var response = await next();
         
-        _logger.LogInformation("Handled request: {ResponseType}", typeof(TResponse).FullName);
+        _logger.LogInformation("Handled request: {RequestType} with {ResponseValue}", typeof(TRequest).FullName, response);
         return response;
     }
 }
